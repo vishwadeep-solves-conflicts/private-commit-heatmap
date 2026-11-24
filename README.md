@@ -2,7 +2,7 @@
 
 Most of my work lives in private client repositories, so my public GitHub graph looked empty. This tool turns daily commit counts from any set of repos into a GitHub-style heatmap SVG, without exposing commit messages, file names or code.
 
-**Web version:** LIVE_URL (runs in your browser; nothing is uploaded)
+**Web version:** https://vishwadeep-solves-conflicts.github.io/private-commit-heatmap/ (runs in your browser; nothing is uploaded)
 
 ![Example heatmap](screenshot.png)
 
