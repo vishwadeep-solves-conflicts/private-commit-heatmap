@@ -4,7 +4,7 @@ Most of my work lives in private client repositories, so my public GitHub graph 
 
 **Web version:** https://vishwadeep-solves-conflicts.github.io/private-commit-heatmap/ (runs in your browser; nothing is uploaded)
 
-![Example heatmap](screenshot.png)
+![Example heatmap](public/screenshot.png)
 
 ## 1. Export commit counts
 
@@ -48,6 +48,35 @@ You get one row per year with month labels, per-day tooltips, a yearly total and
 ```
 
 You can see it on [my GitHub profile](https://github.com/vishwadeep-solves-conflicts) and [portfolio](https://vishwadeep-s.netlify.app).
+
+## Working on the web version
+
+It's a small React app built with Vite. You need Node 20 or newer.
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
+```
+
+```
+heatmap.py             the command-line version (standard library only)
+scripts/               export_commit_days.sh and .ps1
+src/
+  lib/
+    commits.ts         reading commit_days.txt and picking the colour levels
+    heatmapSvg.ts      drawing the SVG
+    palettes.ts        GitHub dark, GitHub light and custom colours for the SVG
+    dates.ts, sampleData.ts, download.ts
+  components/          one file per step on the page
+  styles/              the page's own styles and theme colours
+  shared/              theme switcher and top bar, the same in every app
+  App.tsx              the page's state: pasted text, colours, caption
+```
+
+`heatmap.py` and `src/lib/heatmapSvg.ts` draw the same picture. If you change one, change the other.
+
+Every push to `main` runs `.github/workflows/deploy.yml`, which builds the app and publishes `dist/` to the `gh-pages` branch. GitHub Pages serves that branch, and the self-hosted server copies it.
 
 ## Licence
 
