@@ -1,3 +1,8 @@
+node_modules
+dist
+*.local
+.DS_Store
 commit_days.txt
 commit-heatmap-*.svg
 __pycache__/
+*.pyc

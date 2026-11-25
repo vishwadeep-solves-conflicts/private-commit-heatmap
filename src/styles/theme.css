@@ -1,0 +1,16 @@
+/* Page colours come from the shared palette (shared/tokens.css).
+   The exported SVG has its own colours, in lib/palettes.ts. */
+:root {
+  --bg: var(--vk-bg);
+  --surface: var(--vk-surface);
+  --border: var(--vk-border);
+  --text: var(--vk-text);
+  --muted: var(--vk-muted);
+  --accent: var(--vk-accent);
+  --accent-ink: var(--vk-on-accent);
+  --link: var(--vk-accent);
+  --err: #ff7b72;
+}
+[data-theme="white"] {
+  --err: #cf222e;
+}
